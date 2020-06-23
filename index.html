@@ -1,0 +1,43 @@
+!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    var div = $("img");
+    startAnimation();
+    function startAnimation(){
+      div.animate({height: 500}, "slow");
+      div.animate({width: 500}, "slow");
+      div.css("background-color", "blue");  
+      div.animate({height: 500}, "slow");
+      div.animate({width: 400}, "slow", startAnimation);
+    }
+  });
+});
+$(document).ready(function(){
+  $("button").click(function(){
+    var div = $("div");
+    startAnimation();
+    function startAnimation(){
+      div.animate({height: 300}, "slow");
+      div.animate({width: 300}, "slow");
+      div.css("background-color", "blue");  
+      div.animate({height: 100}, "slow");
+      div.animate({width: 100}, "slow", startAnimation);
+    }
+  });
+});
+</script>
+</head>
+<body>
+  
+<button>Start Animation</button>
+
+
+<img src="3.jpg" style="width:50px;height:50px;position:absolute;left:10px;top:50px;">
+<div style="width:50px;height:50px;position:absolute;left:10px;top:50px;background-color: brown;"></div>
+
+</body>
+</html>
